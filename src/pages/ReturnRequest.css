@@ -1,0 +1,211 @@
+.return-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.center-content {
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.success-message-box {
+  background-color: rgba(34, 197, 94, 0.1);
+  border: 1px solid var(--success);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.success-message-box h2 {
+  color: var(--success);
+  margin-bottom: 0.5rem;
+}
+
+.success-message-box p {
+  color: var(--text-secondary);
+}
+
+.return-order-info {
+  background-color: var(--surface-color);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.return-order-info p {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.return-policy-note {
+  font-size: 0.75rem;
+  color: var(--primary);
+}
+
+.return-form {
+  background-color: var(--surface-color);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.reason-select, .return-textarea {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-color);
+  font-family: var(--font-family);
+  font-size: 0.9375rem;
+  width: 100%;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.return-textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+}
+
+/* Return Items List Styles */
+.return-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.return-item-card {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  gap: 1rem;
+}
+
+.return-item-card:hover {
+  border-color: var(--primary-light);
+}
+
+.return-item-card.selected {
+  border-color: var(--primary);
+  background-color: var(--primary-50);
+}
+
+.return-item-img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.return-item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.return-item-name {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.return-item-price {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.checkbox-custom {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  background-color: white;
+  color: white;
+}
+
+.checkbox-custom.checked {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+/* Photo Upload Styles */
+.upload-container {
+  width: 100%;
+}
+
+.upload-placeholder {
+  width: 100%;
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  color: var(--text-tertiary);
+  background-color: var(--bg-color);
+}
+
+.upload-placeholder:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background-color: var(--primary-50);
+}
+
+.photo-preview-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.photo-preview {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.remove-photo-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-return-btn {
+  margin-top: 1rem;
+  padding: 1rem;
+  font-weight: 600;
+}

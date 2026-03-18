@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">FreshMart</string>
+    <string name="title_activity_main">FreshMart</string>
+    <string name="package_name">com.freshmart.jaggayyapeta</string>
+    <string name="custom_url_scheme">com.freshmart.jaggayyapeta</string>
+</resources>

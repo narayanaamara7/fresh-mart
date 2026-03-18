@@ -1,0 +1,18 @@
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--surface-color);
+}
+
+.layout-main {
+  flex: 1;
+  padding-top: 64px; /* Space for fixed navbar */
+  padding-bottom: 89px; /* Space for fixed bottom nav on mobile */
+}
+
+@media (min-width: 768px) {
+  .layout-main {
+    padding-bottom: 24px;
+  }
+}
