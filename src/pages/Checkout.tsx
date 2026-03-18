@@ -15,6 +15,7 @@ const addressSchema = z.object({
   pincode: z.string().regex(/^\d{6}$/, 'Enter valid 6-digit Pincode (e.g., 521175)')
 });
 
+
 type PaymentMethod = 'upi' | 'card' | 'cod';
 type DeliveryTimeSlot = 'mor' | 'aft' | 'eve';
 
