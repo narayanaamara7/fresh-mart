@@ -12,25 +12,29 @@ const Cart: React.FC = () => {
 
   const subtotal = getSubtotal();
   const discount = subtotal >= 1000 ? subtotal * 0.1 : 0;
-  // Delivery fee logic will be fully finalized in checkout when distance is known
-  // For cart, we show Free if subtotal >= 150, else standard rate
-  const deliveryFee = subtotal >= 150 ? 0 : 30; // base fee representation
+  const deliveryFee = subtotal >= 150 ? 0 : 30;
   const total = subtotal - discount + deliveryFee;
 
   if (items.length === 0) {
     return (
-      <div className="cart-page-container">
-        <div className="header-padding">
+      <div className="cart-page-container empty">
+        <div className="cart-header-bar">
           <button className="icon-btn back-btn" onClick={() => navigate(-1)}>
             <ArrowLeft size={24} />
           </button>
-          <h1 className="page-title">{t('my_cart')}</h1>
+          <h1>{t('my_cart')}</h1>
+          <div style={{ width: 40 }}></div>
         </div>
-        <div className="empty-cart-state">
-          <ShoppingBag size={64} className="empty-cart-icon" />
+        
+        <div className="empty-cart-content">
+          <div className="empty-cart-illustration">
+            <div className="icon-circle">
+              <ShoppingBag size={48} className="empty-cart-icon" />
+            </div>
+          </div>
           <h2>{t('empty_cart')}</h2>
-          <p>Looks like you haven't added any fresh items yet.</p>
-          <button className="primary-btn mt-4" onClick={() => navigate('/app')}>
+          <p>Your cart is empty. Start adding some fresh items to see them here!</p>
+          <button className="primary-btn wide-btn" onClick={() => navigate('/app')}>
             {t('start_shopping')}
           </button>
         </div>

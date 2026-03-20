@@ -7,8 +7,10 @@ import './Layout.css';
 const Layout: React.FC = () => {
   const location = useLocation();
   
-  // Hide global navigation on checkout and order success screens to focus user
-  const hideNav = location.pathname.includes('/checkout') || 
+  // Hide global navigation on cart, checkout and order success screens to focus user 
+  // and prevent overlap with sticky action buttons
+  const hideNav = location.pathname.includes('/cart') || 
+                  location.pathname.includes('/checkout') || 
                   location.pathname.includes('/order-success');
 
   return (

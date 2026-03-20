@@ -11,6 +11,11 @@
   padding-bottom: 89px; /* Space for fixed bottom nav on mobile */
 }
 
+.layout-main.no-nav {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 @media (min-width: 768px) {
   .layout-main {
     padding-bottom: 24px;

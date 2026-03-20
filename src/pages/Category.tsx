@@ -1,17 +1,21 @@
-import { useParams, Link } from 'react-router-dom';
+import React from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { products, categories } from '../data/mockData';
 import { useCartStore } from '../store/useStore';
-import { Plus, ArrowLeft } from 'lucide-react';
+import { Plus, ArrowLeft, ShoppingBag } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import './Category.css';
 
-const Category = () => {
+const Category: React.FC = () => {
   const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
   const { t } = useTranslation();
   const addItem = useCartStore(state => state.addItem);
 
   const isAll = id === 'all';
   const category = isAll ? null : categories.find(c => c.id === id);
+  
+  // Filter products based on category ID
   const categoryProducts = isAll 
     ? products 
     : products.filter(p => p.categoryId === id);
@@ -25,14 +29,14 @@ const Category = () => {
   return (
     <div className="category-page-container">
       <div className="category-header-bar">
-        <Link to="/app" className="back-btn">
+        <button onClick={() => navigate(-1)} className="back-btn" aria-label="Go back">
           <ArrowLeft size={24} />
-        </Link>
+        </button>
         <h1>{isAll ? t('all_products') : category?.name || t('category')}</h1>
-        <div style={{ width: 24 }}></div> {/* Spacer for centering */}
+        <div className="header-spacer"></div>
       </div>
 
-      <div className="product-grid" style={{ padding: '1.5rem' }}>
+      <div className="product-grid">
         {categoryProducts.length > 0 ? (
           categoryProducts.map((product) => (
             <Link 
@@ -67,8 +71,15 @@ const Category = () => {
             </Link>
           ))
         ) : (
-          <div className="empty-state">
-            <p>{t('no_products_found')}</p>
+          <div className="category-empty-state">
+            <div className="empty-icon-wrapper">
+              <ShoppingBag size={48} />
+            </div>
+            <h3>{t('no_products_found')}</h3>
+            <p>We couldn't find any products in this category at the moment.</p>
+            <button className="primary-btn mt-4" onClick={() => navigate('/app')}>
+              Browse All Categories
+            </button>
           </div>
         )}
       </div>
